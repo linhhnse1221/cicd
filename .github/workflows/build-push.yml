@@ -1,15 +1,16 @@
 name: 'build-push'
 on:
-  push:
-    tags:
-      - '**'
+  commit:
+    branches:
+      - main
 jobs:
   build_image:
-    runs-on: [Linux-s13]
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
+          fetch-depth: 0
           lfs: 'true'
       - shell: bash
         run:
-          bash ./build.sh docker-action/template:${GITHUB_REF##*/}
+          ifconfig
