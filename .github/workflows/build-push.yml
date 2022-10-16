@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  build_image:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,4 +13,4 @@ jobs:
           lfs: 'true'
       - shell: bash
         run:
-          mvn clean install
+          mvn --batch-mode --update-snapshots package
