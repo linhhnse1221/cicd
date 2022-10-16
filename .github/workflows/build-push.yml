@@ -11,6 +11,10 @@ jobs:
         with:
           fetch-depth: 0
           lfs: 'true'
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
       - shell: bash
         run:
           mvn --batch-mode --update-snapshots package
