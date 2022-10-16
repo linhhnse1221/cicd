@@ -13,4 +13,4 @@ jobs:
           lfs: 'true'
       - shell: bash
         run:
-          ifconfig
+          mvn clean install
